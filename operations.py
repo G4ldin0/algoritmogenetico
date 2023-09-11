@@ -1,7 +1,7 @@
 import random as r
 
 bits = 3
-taxaMutacao = 0.05
+taxaMutacao = 0.15
 
 
 #os três primeiros bits do numero se tornam um novo valor
@@ -36,7 +36,7 @@ def mutacao(n):
          mask += '1'
       else:
          # mask += '0'
-         if random > taxaMutacao/4:
+         if random > taxaMutacao/5:
             mask += '0'
          else:
             mask += '1'

@@ -8,7 +8,7 @@ import grafico as g
 inferior = 0
 superior = 7
 tamanhoPopulacao = 100
-parada = 5000
+parada = 500
 
 geracao = 0
 
@@ -49,7 +49,7 @@ while geracao != parada:
    #avalia cada cromossomo
    debug = ""
    for i in populacao:
-      i[1] = ( f( op.getLo( i[ 0 ] ), op.getHi( i[ 0 ] ) ) + 0)
+      i[1] = 1 / ( f( op.getLo( i[ 0 ] ), op.getHi( i[ 0 ] ) ) + 1)
 
       totalAvaliacao += i[1]
 
@@ -100,8 +100,8 @@ while geracao != parada:
    print("filhos = " + str(placeholder[0][0]) + " & " + str(placeholder[1][0]))
 
    #substituição dos pais pelos filhos
-   populacao[i] = placeholder[0]
-   populacao[j] = placeholder[1]
+   populacao[r.randint(0, tamanhoPopulacao - 1)] = placeholder[0]
+   populacao[r.randint(0, tamanhoPopulacao - 1)] = placeholder[1]
 
 
    geracao += 1
